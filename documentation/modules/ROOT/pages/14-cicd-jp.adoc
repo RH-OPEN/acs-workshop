@@ -125,7 +125,7 @@ image:cicd/lab4-devsecops08.png[200,700]
 このオプションは、開発者の観点からすると最もポピュラーなものかもしれません。PR や git リポジトリへのプッシュからパイプラインが始まり、webhook が自動的にパイプラインを開始します。
 +
 .. 開発コンソールから、左のナビメニューにある `Search` をクリックします。
-.. 'route'と入力し、リストの中から``Route``をクリックします。
+.. 'route'(日本語ブラウザの場合は'ルート')と入力し、リストの中から``Route``をクリックします。
 +
 image:cicd/lab4-devsecops09.png[400,400]
 +
@@ -383,7 +383,7 @@ image:cicd/lab4.2-5-exclude-image_new.png[300,700]
 +
 image:cicd/lab4.2-5-2Policy_new.png[300,700]
 +
-.. OpenShift developer console に戻り、ナビの “ocp-workshop” プロジェクトの下にあるパイプラインをクリックします。
+.. OpenShift developer console に戻り、ナビの “cicd” プロジェクトの下にあるパイプラインをクリックします。
 +
 image:cicd/lab4-devsecops52.png[300,700]
 +
@@ -611,7 +611,7 @@ image:cicd/lab4-devsecops92.png[300,700]
 +
 .. この改善案で効果的に Image を更新していきます。
 . Tekton タスク `s2i-java-11` を更新するのではなく、タスクを置き換えます。
-.. OpenShift Administrator UIから、ocp-workshopプロジェクトが選択されていることを確認してから、Pipelines > Tasksに移動し、s2i-java-11タスクを削除してください。
+.. OpenShift Administrator UIから、cicdプロジェクトが選択されていることを確認してから、Pipelines > Tasksに移動し、s2i-java-11タスクを削除してください。
 +
 image:cicd/lab4-devsecops93.png[300,700]
 +
