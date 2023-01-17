@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Getting Started :: ACS Workshop</title>
+    <title>作業の開始 :: ACS Workshop</title>
     <link rel="canonical" href="https://tutsunom.github.io/acs-workshop/acs-workshop/02-getting_started.html">
     <link rel="prev" href="01-setup.html">
     <link rel="next" href="03-overview-acs.html">
@@ -387,21 +387,21 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Getting Started</h1>
+<h1 class="page">作業の開始</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>We will install ACS thought the RHACS Operator and afterwards we will install an small demo that will serve examples to our workshop.</p>
+<p>RHACS OperatorをACSと想定してインストールし、その後ワークショップのサンプルとなる小さなデモをインストールします。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="install_acs_operator"><a class="anchor" href="#install_acs_operator"></a>RHACS Operator Installation</h2>
+<h2 id="install_acs_operator"><a class="anchor" href="#install_acs_operator"></a>RHACS Operatorのインストール</h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Find and the Advanced Cluster Security Operator from the Operator Hub.</p>
+<p>Operator Hub から Advanced Cluster Security Operator を検索します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/00_operator_hub.png" alt="ACS Operator 1" width="800">
@@ -409,7 +409,7 @@
 </div>
 </li>
 <li>
-<p>Install the selected operator by clicking on the <code>Install</code> button.</p>
+<p><code>Install</code>ボタンをクリックして、選択したオペレーターをインストールします。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/01_select_acs_operator.png" alt="ACS Operator 2" width="800">
@@ -417,7 +417,7 @@
 </div>
 </li>
 <li>
-<p>Confirm installation parameters</p>
+<p>インストール パラメータを確認します。</p>
 <div class="ulist">
 <ul>
 <li>
@@ -438,7 +438,7 @@
 </div>
 </li>
 <li>
-<p>Wait for completion, the installation will take a few minutes.</p>
+<p>完了するまで待ちます。インストールには数分かかります。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/03_wait_for_completion.png" alt="ACS Operator 4" width="800">
@@ -446,7 +446,7 @@
 </div>
 </li>
 <li>
-<p>Access the now ready operator by clicking on the <code>View Operator</code> button.</p>
+<p><code>View Operator</code> ボタンをクリックして、準備完了のオペレーターにアクセスします。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/04_operator_ready.png" alt="ACS Operator 5" width="800">
@@ -458,23 +458,23 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="install_acs_central"><a class="anchor" href="#install_acs_central"></a>RHACS Central Cluster Installation</h2>
+<h2 id="install_acs_central"><a class="anchor" href="#install_acs_central"></a>RHACS Central Clusterのインストール</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this section we will deploy the Central component in the lab cluster. The Central is made up two main deployments:</p>
+<p>このセクションでは、Central コンポーネントをラボ クラスタにデプロイします。Central は、次の 2 つの主要なデプロイメントで構成されています。</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The <code>central</code> service, which exposes api and console and communicates with Sensors on secured clusters.</p>
+<p>The <code>central</code> サービスは、API とコンソールを公開し、セキュリティで保護されたクラスター上のセンサーと通信します。</p>
 </li>
 <li>
-<p>The <code>scanner</code> service, which has the role of scanning the deployed pods images.</p>
+<p>The <code>scanner</code> サービスは、デプロイされたPodsのイメージをスキャンする役割を持ちます。</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Log in to your OpenShift cluster and create a new <code>stackrox</code> namespace (using the web console or the cli as follows). We will install our components here.</p>
+<p>OpenShift クラスターにログインし、新しい <code>stackrox</code> namespace を作成します (次のように Web コンソールまたは cli を使用します)。ここにコンポーネントをインストールします。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -482,8 +482,8 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Then, create a secret with a password to be used by the admin user in ACS Central. You will specify this secret later when you create ACS Central.<br>
-This is not a mandatory work, but you should set <code>stackrox</code> as the admin password with <code>acs-password</code> secret for later labs in this workshop.</p>
+<p>次に、ACS Central で管理者ユーザーが使用するパスワードを使用してシークレットを作成します。このSecretは、後で ACS Central を作成するときに指定します。<br>
+この作業は必須ではありませんが、このワークショップの後のラボでは、<code>acs-password</code> をSecretにして、<code>stackrox</code> を管理者パスワードとして設定する必要があります。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -492,7 +492,7 @@ This is not a mandatory work, but you should set <code>stackrox</code> as the ad
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If you create Central without specifying a Secret, a random string will be set as the admin user&#8217;s password.
+Secret を指定せずに Central を作成すると、管理者ユーザーのパスワードとしてランダムな文字列が設定されます。
 </td>
 </tr>
 </table>
@@ -503,7 +503,7 @@ If you create Central without specifying a Secret, a random string will be set a
 </div>
 </div>
 <div class="paragraph">
-<p>Then, let&#8217;s create Central. The following is an example of the central custom resource. You can do this in two ways, via the web console or via the CLI.</p>
+<p>次に、Central を作成しましょう。以下は、Centralのカスタム リソースの例です。これは、Web コンソールまたは CLI の 2 つの方法で行うことができます。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -540,11 +540,11 @@ spec:
 </div>
 </div>
 <div class="sect2">
-<h3 id="install_acs_central_web_console"><a class="anchor" href="#install_acs_central_web_console"></a>With Web Console</h3>
+<h3 id="install_acs_central_web_console"><a class="anchor" href="#install_acs_central_web_console"></a>Web コンソールの利用</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>From the operator <em>ready screen</em> by clicking on <code>View Operator</code> or navigating to the <strong>Operators → Installed Operators</strong> page. Then, under the <strong>Provided APIs</strong> section, select <code>Create Central</code> on the <code>Central</code> API:</p>
+<p>Operatorの <em>ready screen</em> から <code>View Operator</code> をクリックするか、<strong>Operators → Installed Operators</strong> ページに移動してください。次に、<strong>Provided APIs</strong> セクションで、<code>Central</code> API の <code>Create Central</code> を選択します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/04_1_create_central_resource.png" alt="ACS Operator 51" width="800">
@@ -552,7 +552,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Check the <code>YAML</code> radio button and paste the <code>Central</code> CR you see below and click on the <code>Create</code> button.</p>
+<p><code>YAML</code> ラジオボタンをチェックし、下に表示されている <code>Central</code> CR を貼り付けて <code>Create</code> ボタンをクリックします。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/04_2_create_central_resource.png" alt="ACS Operator 52" width="800">
@@ -560,7 +560,7 @@ spec:
 </div>
 </li>
 <li>
-<p>You can check the progress by switching to the <code>Developer</code> perspective, in the <code>Topology</code> menu.</p>
+<p>メニューの <code>Topology</code> で <code>Developer</code> パースペクティブに切り替えると、進行状況を確認することができます。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/04_3_create_central_resource.png" alt="ACS Operator 53" width="800">
@@ -570,12 +570,12 @@ spec:
 </ol>
 </div>
 <div class="paragraph">
-<p>You can also do the same using the <code>Developer</code> perspective:</p>
+<p>また、<code>Developer</code>のパースペクティブを使用しても同様のことが可能です。</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Within the <code>stackrock</code> project selected, <strong>+Add → Import YAML</strong></p>
+<p>選択した <code>stackrock</code> プロジェクト内で、 <strong>+Add → Import YAML</strong> を実行します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/04_11_create_central_resource.png" alt="ACS Operator 511" width="800">
@@ -583,7 +583,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Paste the YAML content and click on the <code>Create</code> button:</p>
+<p>YAML コンテンツを貼り付けて、<code>Create</code> ボタンをクリックします。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/04_22_create_central_resource.png" alt="ACS Operator 512" width="800">
@@ -598,7 +598,7 @@ spec:
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create the <code>central</code> custom resource using the template file provided in this repository.</p>
+<p>このリポジトリで提供されているテンプレートファイルを使用して、<code>central</code> のカスタムリソースを作成します。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f stackrox-central-services.yaml -n stackrox</code></pre>
@@ -606,7 +606,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Monitor the installation using the watch option:</p>
+<p>watch オプションを使用してインストールを監視します。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get pods -n stackrox -w</code></pre>
@@ -617,11 +617,11 @@ spec:
 </div>
 </div>
 <div class="sect2">
-<h3 id="_rhacs_login"><a class="anchor" href="#_rhacs_login"></a>RHACS login</h3>
+<h3 id="_rhacs_ログイン"><a class="anchor" href="#_rhacs_ログイン"></a>RHACS ログイン</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Once the installation is complete, extract the hostname of the generated route from the command line as follows or using the <code>Topology</code> view from the web console.</p>
+<p>インストールが完了したら、以下のようにコマンドラインから、またはWebコンソールから <code>Topology</code> ビューを使用して、生成されたルートのホスト名を抽出します。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get routes/central -n stackrox -o jsonpath='{.spec.host}'</code></pre>
@@ -629,7 +629,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Login to <a href="https://&lt;route_hostname&gt" class="bare">https://&lt;route_hostname&gt</a>; using the <code>admin</code> username and the password <code>stackrox</code>.</p>
+<p><a href="https://&lt;route_hostname&gt" class="bare">https://&lt;route_hostname&gt</a>; にログインします。 usernameは <code>admin</code> passwordは <code>stackrox</code> を使用します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/05_2_login.png" alt="ACS Operator 62" width="800">
@@ -642,17 +642,17 @@ spec:
 </div>
 </div>
 <div class="sect1">
-<h2 id="config_acs_securedcluster"><a class="anchor" href="#config_acs_securedcluster"></a>RHACS Secured Cluster Configuration</h2>
+<h2 id="config_acs_securedcluster"><a class="anchor" href="#config_acs_securedcluster"></a>RHACS Secured Cluster の構成</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To import a cluster into ACS, you need to generate a cluster init bundle containing TLS secrets for Sensor, Collectors, and Admission Controllers.</p>
+<p>ACSにクラスタをインポートするには、Sensor、Collectors、Admission ControllersのTLSシークレットを含む Cluster init bundle を生成する必要があります。</p>
 </div>
 <div class="sect2">
-<h3 id="config_acs_securedcluster_init_bundle"><a class="anchor" href="#config_acs_securedcluster_init_bundle"></a>Generating an init bundle by using the RHACS portal</h3>
+<h3 id="config_acs_securedcluster_init_bundle"><a class="anchor" href="#config_acs_securedcluster_init_bundle"></a>RHACSポータルを利用した init bundle の生成</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Generate the cluster init bundle by accessing the <code>Integration</code> subsection in the <code>Platform Configuration</code> section</p>
+<p>Platform Configuration<code> セクションの </code>Integration`` サブセクションにアクセスして、cluster init bundle を生成します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/06_acs_integrations.png" alt="ACS Operator 7" width="800">
@@ -660,7 +660,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Generate the bundle with a unique cluster name, in our case, <code>demo-cluster</code></p>
+<p>クラスタ名を指定して bundle を生成します (ここでは <code>demo-cluster</code> )。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/07_generate_cluster_init_bundle.png" alt="ACS Operator 8" width="800">
@@ -668,7 +668,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Download the cluster init bundle secret.</p>
+<p>cluster init bundle secretをダウンロードします。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/08_download_cluster_init_bundle_secret.png" alt="ACS Operator 9" width="800">
@@ -676,7 +676,7 @@ spec:
 </div>
 </li>
 <li>
-<p>Apply the cluster init bundle secret on the target secured cluster</p>
+<p>ターゲットのセキュアなクラスターにcluster init bundle secretを適用します。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f ~/Downloads/demo-cluster-cluster-init-secrets.yaml -n stackrox</code></pre>
@@ -690,7 +690,7 @@ spec:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can open the yaml file, copy the content and paste it to the web console using the <strong>+Add → Import YAML</strong> shortcut. As you are <code>cluster-admin</code> and all the object have the <code>namespace</code> key set you will get all the object created in their respective namespaces regrardless the project you choose in the web console (all projects or whatever).</p>
+<p>yaml ファイルを開いて内容をコピーし、<strong>+Add → Import YAML</strong> ショートカットを使ってウェブコンソールに貼り付けることができます。あなたは <code>cluster-admin</code> で、すべてのオブジェクトに <code>namespace</code> キーが設定されているので、Webコンソールで選択した project（すべてのprojectなど）に関係なく、それぞれの namespace にすべてのオブジェクトを作成することができます。</p>
 </div>
 </td>
 </tr>
@@ -701,7 +701,7 @@ spec:
 </div>
 </div>
 <div class="sect2">
-<h3 id="config_acs_securedcluster_install_scs"><a class="anchor" href="#config_acs_securedcluster_install_scs"></a>Installing secured cluster services</h3>
+<h3 id="config_acs_securedcluster_install_scs"><a class="anchor" href="#config_acs_securedcluster_install_scs"></a>セキュア クラスタ サービスのインストール</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -709,13 +709,13 @@ spec:
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This workshop uses the same cluster as central and secured cluster. In a real time scenario there will be many different secured clusters. Please ensure to install the ACS Operator in all the secured cluster in order to manage the SecuredCluster CR.
+このワークショップでは、Central clusterとsecured clusterとして同じクラスタを使用します。実際のシナリオでは、多くの異なるsecured clusterが存在することになります。SecuredCluster CRを管理するために、すべてのsecured cluster にACS Operatorをインストールしてください。
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>The <code>SecuredCluster</code> custom resource is quite simple. The following example shows the configuration for a <code>demo-cluster</code> target. Notice the <code>collector</code> configuration, with the collection method set to <code>EBPF</code>. The alternative collection approach would be <code>KernelModule</code>. The <code>TolerateTaints</code> lets the Collector daemonset be deployed also on nodes with special taints, like the ODF nodes.</p>
+<p><code>SecuredCluster</code> のカスタムリソースは非常にシンプルです。以下の例では、 <code>demo-cluster</code> をターゲットとした設定を示しています。<code>collector</code> の設定に注目してください。コレクションメソッドは <code>EBPF</code> に設定されています。別の収集方法としては、 <code>KernelModule</code> があります。TolerateTaints`` により、Collector デーモンセットを ODF ノードのような特別なテイントを持つノードにもデプロイすることができます。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -744,7 +744,7 @@ spec:
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Check the settings of the <a href="https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator">SecuredCluster operator documentation</a> for more information.
+詳しくは、https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator[SecuredCluster operator documentation]の設定を確認してください。
 </td>
 </tr>
 </table>
@@ -752,19 +752,19 @@ Check the settings of the <a href="https://docs.openshift.com/acs/installing/ins
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Create the Secured Cluster custom Resource using (and optionally custumizing) the example provided in the repository.</p>
+<p>リポジトリで提供されているサンプルを使用(オプションでカストマイズも可能)して、Secured Clusterカスタムリソースを作成します。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f stackrox-secured-cluster-services.yaml -n stackrox</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Or using the web console, in the ACS opertator view, as follows:</p>
+<p>または、Webコンソールを使用して、ACS オペレータビューで、次のようにします。</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Under the Provided APIs section, select Create instance on the Secured Cluster API</p>
+<p>提供されているAPIセクションで、「Create Secured Cluster」を選択します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/09_create_secured_cluster_resource.png" alt="ACS Operator 9" width="800">
@@ -772,7 +772,7 @@ Check the settings of the <a href="https://docs.openshift.com/acs/installing/ins
 </div>
 </li>
 <li>
-<p>And then copy &amp; paste the yaml content</p>
+<p>そして、yamlの内容をコピー＆ペーストします。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/10_create_secured_cluster_resource_yaml.png" alt="ACS Operator 10" width="800">
@@ -782,11 +782,11 @@ Check the settings of the <a href="https://docs.openshift.com/acs/installing/ins
 </ol>
 </div>
 <div class="paragraph">
-<p>Or as in the previous section, with the <strong>+Add → Import YAML</strong> path.</p>
+<p>または、前のセクションと同様に、<strong>+Add → Import YAML</strong>のパスを使用します。</p>
 </div>
 </li>
 <li>
-<p>Monitor the installation using the watch option (or using the web console <code>Topology</code> view from the <code>Developer</code> perspective as mentioned before):</p>
+<p>watch オプションを使用してインストールを監視します (または、前述の <code>Developer</code> パースペクティブからWebコンソールの <code>Topology</code> ビューを使用します)。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc get pods -n stackrox -w</code></pre>
@@ -794,7 +794,7 @@ Check the settings of the <a href="https://docs.openshift.com/acs/installing/ins
 </div>
 </li>
 <li>
-<p>At the end of the installation, go to the central console and check the correct attachment of the secured cluster.</p>
+<p>インストールが終了したら、central consoleに行き、secured cluster が正しく接続されていることを確認します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/11_verify_cluster_list.png" alt="ACS Operator 11" width="800">
@@ -807,7 +807,7 @@ Check the settings of the <a href="https://docs.openshift.com/acs/installing/ins
 </div>
 </div>
 <div class="sect1">
-<h2 id="deploy_demo_acs"><a class="anchor" href="#deploy_demo_acs"></a>Deploying Demo in RHACS - Mandatory</h2>
+<h2 id="deploy_demo_acs"><a class="anchor" href="#deploy_demo_acs"></a>RHACS デモの展開 - 必須</h2>
 <div class="sectionbody">
 <div class="admonitionblock important">
 <table>
@@ -816,7 +816,7 @@ Check the settings of the <a href="https://docs.openshift.com/acs/installing/ins
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Independent of which option to install you used, you need to deploy the ACS Demo into your cluster.
+使用したインストール オプションに関係なく、ACS デモをクラスタに展開する必要があります。
 </td>
 </tr>
 </table>
@@ -824,7 +824,7 @@ Independent of which option to install you used, you need to deploy the ACS Demo
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the repo with the demo:</p>
+<p>デモを含むレポをダウンロードします。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo dnf install -y ansible
@@ -837,7 +837,7 @@ cd rhacs-demo</code></pre>
 </div>
 </li>
 <li>
-<p>Apply the ansible demo into the cluster:</p>
+<p>ansible デモをクラスターに適用します。</p>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -845,7 +845,7 @@ cd rhacs-demo</code></pre>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-you must be logged to the OpenShift cluster before you execute the playbook.
+Playbook を実行する前に、OpenShift クラスターにログインする必要があります。
 </td>
 </tr>
 </table>
@@ -857,7 +857,7 @@ you must be logged to the OpenShift cluster before you execute the playbook.
 </div>
 </li>
 <li>
-<p>After the Playbook execution (and if everything worked properly), the output will be the following:</p>
+<p>Playbook の実行後 (すべてが正常に機能した場合)、出力は次のようになります。</p>
 <div class="listingblock console-output">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">TASK [ocp4_deploy_acs_demo_apps : Lock baselines] ****************************************************************************************
@@ -875,15 +875,15 @@ localhost                  : ok=35   changed=3    unreachable=0    failed=0    s
 </div>
 </div>
 <div class="sect1">
-<h2 id="deploy_apps"><a class="anchor" href="#deploy_apps"></a>Deploying Apps - Optional</h2>
+<h2 id="deploy_apps"><a class="anchor" href="#deploy_apps"></a>アプリのデプロイ - オプション</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If you do not plan to follow the remaining sections (which are based on deploying the demo) and prefer to play and make your own findings, simply follow the steps below:</p>
+<p>残りのセクション (デモの展開に基づく) に従う予定がなく、プレイして独自の発見をしたい場合は、以下の手順に従ってください。</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Start some applications with critical vulnerabilities:</p>
+<p>重大な脆弱性があるいくつかのアプリケーションを開始します。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc new-project test</code></pre>
@@ -903,7 +903,7 @@ localhost                  : ok=35   changed=3    unreachable=0    failed=0    s
 </div>
 </li>
 <li>
-<p>Navigate to the RHACS portal to view the violations.</p>
+<p>RHACS ポータルに移動して、違反を表示します。</p>
 </li>
 </ol>
 </div>
