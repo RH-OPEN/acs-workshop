@@ -49,8 +49,8 @@ image:cicd/lab4-pipelines-install-01.PNG[600,800]
 
 image:cicd/lab4-pipelines-install-02.PNG[600,800]
 
-OpenShift Pipelines Operator の channel や Installation mode などの設定画面が表示されます。**設定は変更せず、デフォルトの設定のまま**下部にある "Install" のボタンをクリックします。これで自動的にインストールが始まります。 +
-(設定項目の選択肢が図と異なることがありますが、デフォルトのままで構いません)
+OpenShift Pipelines Operator の channel や Installation mode などの設定画面が表示されます。**更新チャネルで、stableを選択し、他はデフォルトの設定のまま**下部にある "Install" のボタンをクリックします。これで自動的にインストールが始まります。 +
+(設定項目の選択肢が画像と異なることがありますが、無視してください)
 
 image:cicd/lab4-pipelines-install-03.PNG[600,800]
 
@@ -63,8 +63,8 @@ image:cicd/lab4-gitops-install-01.PNG[600,800]
 
 image:cicd/lab4-gitops-install-02.PNG[600,800]
 
-OpenShift GitOps Operator の channel や Installation mode などの設定画面が表示されます。**設定は変更せず、デフォルトの設定のまま**下部にある "Install" のボタンをクリックします。これで自動的にインストールが始まります。 +
-(設定項目の選択肢が図と異なることがありますが、デフォルトのままで構いません)
+OpenShift GitOps Operator の channel や Installation mode などの設定画面が表示されます。**更新チャネルで、stableを選択し、他はデフォルトの設定のまま**下部にある "Install" のボタンをクリックします。これで自動的にインストールが始まります。 +
+(設定項目の選択肢が画像と異なることがありますが、無視してください)
 
 image:cicd/lab4-gitops-install-03.PNG[600,800]
 
