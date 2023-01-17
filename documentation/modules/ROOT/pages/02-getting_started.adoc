@@ -1,45 +1,45 @@
-= Getting Started
+= 作業の開始
 include::_attributes.adoc[]
 :profile: acs
 
-We will install ACS thought the RHACS Operator and afterwards we will install an small demo that will serve examples to our workshop.
+RHACS OperatorをACSと想定してインストールし、その後ワークショップのサンプルとなる小さなデモをインストールします。
 
 [#install_acs_operator]
-== RHACS Operator Installation
+== RHACS Operatorのインストール
 
-. Find and the Advanced Cluster Security Operator from the Operator Hub.
+. Operator Hub から Advanced Cluster Security Operator を検索します。
 +
 image::install/00_operator_hub.png[ACS Operator 1, 800]
 
-. Install the selected operator by clicking on the ``Install`` button.
+. ``Install``ボタンをクリックして、選択したオペレーターをインストールします。
 +
 image::install/01_select_acs_operator.png[ACS Operator 2, 800]
 
-. Confirm installation parameters
+. インストール パラメータを確認します。
 * ``rhacs-3.70`` channel
 * ``rhacs-operator`` namespace
 * ``Automatic`` update
 +
 image::install/02_install_acs_operator.png[ACS Operator 3, 800]
 
-. Wait for completion, the installation will take a few minutes.
+. 完了するまで待ちます。インストールには数分かかります。
 +
 image::install/03_wait_for_completion.png[ACS Operator 4, 800]
 
-. Access the now ready operator by clicking on the ``View Operator`` button.
+. ``View Operator`` ボタンをクリックして、準備完了のオペレーターにアクセスします。
 +
 image::install/04_operator_ready.png[ACS Operator 5, 800]
 
 [#install_acs_central]
-== RHACS Central Cluster Installation
+== RHACS Central Clusterのインストール
 
-In this section we will deploy the Central component in the lab cluster. The Central is made up two main deployments:
+このセクションでは、Central コンポーネントをラボ クラスタにデプロイします。Central は、次の 2 つの主要なデプロイメントで構成されています。
 
-* The ``central`` service, which exposes api and console and communicates with Sensors on secured clusters.
+* The ``central`` サービスは、API とコンソールを公開し、セキュリティで保護されたクラスター上のセンサーと通信します。
 
-* The ``scanner`` service, which has the role of scanning the deployed pods images.
+* The ``scanner`` サービスは、デプロイされたPodsのイメージをスキャンする役割を持ちます。
 
-Log in to your OpenShift cluster and create a new ``stackrox`` namespace (using the web console or the cli as follows). We will install our components here.
+OpenShift クラスターにログインし、新しい ``stackrox`` namespace を作成します (次のように Web コンソールまたは cli を使用します)。ここにコンポーネントをインストールします。
 
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -47,10 +47,10 @@ Log in to your OpenShift cluster and create a new ``stackrox`` namespace (using 
 oc new-project stackrox	
 ----
 
-Then, create a secret with a password to be used by the admin user in ACS Central. You will specify this secret later when you create ACS Central. +
-This is not a mandatory work, but you should set `stackrox` as the admin password with `acs-password` secret for later labs in this workshop.
+次に、ACS Central で管理者ユーザーが使用するパスワードを使用してシークレットを作成します。このSecretは、後で ACS Central を作成するときに指定します。 +
+この作業は必須ではありませんが、このワークショップの後のラボでは、`acs-password` をSecretにして、`stackrox` を管理者パスワードとして設定する必要があります。
 
-NOTE: If you create Central without specifying a Secret, a random string will be set as the admin user's password. 
+NOTE: Secret を指定せずに Central を作成すると、管理者ユーザーのパスワードとしてランダムな文字列が設定されます。
 
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -58,7 +58,7 @@ NOTE: If you create Central without specifying a Secret, a random string will be
 oc create secret generic acs-password --from-literal=password=stackrox -n stackrox
 ----
 
-Then, let's create Central. The following is an example of the central custom resource. You can do this in two ways, via the web console or via the CLI.
+次に、Central を作成しましょう。以下は、Centralのカスタム リソースの例です。これは、Web コンソールまたは CLI の 2 つの方法で行うことができます。
 
 [.console-input]
 [source,yaml,subs="attributes+,+macros"]	
@@ -96,27 +96,27 @@ spec:
 ----
 
 [#install_acs_central_web_console]
-=== With Web Console
+=== Web コンソールの利用
 
-. From the operator _ready screen_ by clicking on ``View Operator`` or navigating to the **Operators → Installed Operators** page. Then, under the **Provided APIs** section, select ``Create Central`` on the ``Central`` API:
+. Operatorの _ready screen_ から ``View Operator`` をクリックするか、**Operators → Installed Operators** ページに移動してください。次に、**Provided APIs** セクションで、``Central`` API の ``Create Central`` を選択します。
 +
 image::install/04_1_create_central_resource.png[ACS Operator 51, 800]
 
-. Check the ``YAML`` radio button and paste the ``Central`` CR you see below and click on the ``Create`` button.
+. ``YAML`` ラジオボタンをチェックし、下に表示されている ``Central`` CR を貼り付けて ``Create`` ボタンをクリックします。
 +
 image::install/04_2_create_central_resource.png[ACS Operator 52, 800]
 
-. You can check the progress by switching to the `Developer` perspective, in the `Topology` menu.
+. メニューの `Topology` で `Developer` パースペクティブに切り替えると、進行状況を確認することができます。
 +
 image::install/04_3_create_central_resource.png[ACS Operator 53, 800]
 
-You can also do the same using the ``Developer`` perspective:
+また、``Developer``のパースペクティブを使用しても同様のことが可能です。
 
-. Within the ``stackrock`` project selected, **+Add → Import YAML**
+. 選択した ``stackrock`` プロジェクト内で、 **+Add → Import YAML** を実行します。
 +
 image::install/04_11_create_central_resource.png[ACS Operator 511, 800]
 
-. Paste the YAML content and click on the ``Create`` button:
+. YAML コンテンツを貼り付けて、``Create`` ボタンをクリックします。
 +
 image::install/04_22_create_central_resource.png[ACS Operator 512, 800]
 
@@ -124,7 +124,7 @@ image::install/04_22_create_central_resource.png[ACS Operator 512, 800]
 [#install_acs_central_oc_client]
 === With OC client
 
-. Create the ``central`` custom resource using the template file provided in this repository.
+. このリポジトリで提供されているテンプレートファイルを使用して、``central`` のカスタムリソースを作成します。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -132,7 +132,7 @@ image::install/04_22_create_central_resource.png[ACS Operator 512, 800]
 oc apply -f stackrox-central-services.yaml -n stackrox
 ----
 
-. Monitor the installation using the watch option:
+. watch オプションを使用してインストールを監視します。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -140,9 +140,9 @@ oc apply -f stackrox-central-services.yaml -n stackrox
 oc get pods -n stackrox -w
 ----
 
-=== RHACS login
+=== RHACS ログイン
 
-. Once the installation is complete, extract the hostname of the generated route from the command line as follows or using the ``Topology`` view from the web console.
+. インストールが完了したら、以下のようにコマンドラインから、またはWebコンソールから ``Topology`` ビューを使用して、生成されたルートのホスト名を抽出します。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -150,31 +150,31 @@ oc get pods -n stackrox -w
 oc get routes/central -n stackrox -o jsonpath='{.spec.host}'
 ----
 
-. Login to https://<route_hostname> using the ``admin`` username and the password ``stackrox``.
+. https://<route_hostname> にログインします。 usernameは ``admin`` passwordは ``stackrox`` を使用します。
 +
 image::install/05_2_login.png[ACS Operator 62, 800]
 
 [#config_acs_securedcluster]
-== RHACS Secured Cluster Configuration
+== RHACS Secured Cluster の構成
 
-To import a cluster into ACS, you need to generate a cluster init bundle containing TLS secrets for Sensor, Collectors, and Admission Controllers.
+ACSにクラスタをインポートするには、Sensor、Collectors、Admission ControllersのTLSシークレットを含む Cluster init bundle を生成する必要があります。
 
 [#config_acs_securedcluster_init_bundle]
-=== Generating an init bundle by using the RHACS portal
+=== RHACSポータルを利用した init bundle の生成
 
-. Generate the cluster init bundle by accessing the ``Integration`` subsection in the ``Platform Configuration`` section 
+. Platform Configuration`` セクションの ``Integration`` サブセクションにアクセスして、cluster init bundle を生成します。
 +
 image::install/06_acs_integrations.png[ACS Operator 7, 800]
 
-. Generate the bundle with a unique cluster name, in our case, ``demo-cluster``
+. クラスタ名を指定して bundle を生成します (ここでは ``demo-cluster`` )。
 +
 image::install/07_generate_cluster_init_bundle.png[ACS Operator 8, 800]
 
-. Download the cluster init bundle secret.
+. cluster init bundle secretをダウンロードします。
 +
 image::install/08_download_cluster_init_bundle_secret.png[ACS Operator 9, 800]
 
-. Apply the cluster init bundle secret on the target secured cluster
+. ターゲットのセキュアなクラスターにcluster init bundle secretを適用します。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -184,15 +184,15 @@ oc apply -f ~/Downloads/demo-cluster-cluster-init-secrets.yaml -n stackrox
 +
 [TIP]
 ====
-You can open the yaml file, copy the content and paste it to the web console using the **+Add → Import YAML** shortcut. As you are ``cluster-admin`` and all the object have the `namespace` key set you will get all the object created in their respective namespaces regrardless the project you choose in the web console (all projects or whatever).
+yaml ファイルを開いて内容をコピーし、**+Add → Import YAML** ショートカットを使ってウェブコンソールに貼り付けることができます。あなたは ``cluster-admin`` で、すべてのオブジェクトに `namespace` キーが設定されているので、Webコンソールで選択した project（すべてのprojectなど）に関係なく、それぞれの namespace にすべてのオブジェクトを作成することができます。
 ====
 
 [#config_acs_securedcluster_install_scs]
-=== Installing secured cluster services
+=== セキュア クラスタ サービスのインストール
 
-NOTE: This workshop uses the same cluster as central and secured cluster. In a real time scenario there will be many different secured clusters. Please ensure to install the ACS Operator in all the secured cluster in order to manage the SecuredCluster CR.
+NOTE: このワークショップでは、Central clusterとsecured clusterとして同じクラスタを使用します。実際のシナリオでは、多くの異なるsecured clusterが存在することになります。SecuredCluster CRを管理するために、すべてのsecured cluster にACS Operatorをインストールしてください。
 
-The ``SecuredCluster`` custom resource is quite simple. The following example shows the configuration for a ``demo-cluster`` target. Notice the ``collector`` configuration, with the collection method set to ``EBPF``. The alternative collection approach would be ``KernelModule``. The ``TolerateTaints`` lets the Collector daemonset be deployed also on nodes with special taints, like the ODF nodes.
+``SecuredCluster`` のカスタムリソースは非常にシンプルです。以下の例では、 ``demo-cluster`` をターゲットとした設定を示しています。``collector`` の設定に注目してください。コレクションメソッドは ``EBPF`` に設定されています。別の収集方法としては、 ``KernelModule`` があります。TolerateTaints`` により、Collector デーモンセットを ODF ノードのような特別なテイントを持つノードにもデプロイすることができます。
 
 [.console-input]
 [source,yaml,subs="attributes+,+macros"]	
@@ -215,9 +215,9 @@ spec:
     taintToleration: TolerateTaints
 ----
 
-NOTE: Check the settings of the https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator[SecuredCluster operator documentation] for more information.
+NOTE: 詳しくは、https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator[SecuredCluster operator documentation]の設定を確認してください。
 
-. Create the Secured Cluster custom Resource using (and optionally custumizing) the example provided in the repository.
+. リポジトリで提供されているサンプルを使用(オプションでカストマイズも可能)して、Secured Clusterカスタムリソースを作成します。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -225,20 +225,20 @@ NOTE: Check the settings of the https://docs.openshift.com/acs/installing/instal
 oc apply -f stackrox-secured-cluster-services.yaml -n stackrox
 ----
 +
-Or using the web console, in the ACS opertator view, as follows:
+または、Webコンソールを使用して、ACS オペレータビューで、次のようにします。
 +
-.. Under the Provided APIs section, select Create instance on the Secured Cluster API
+.. 提供されているAPIセクションで、「Create Secured Cluster」を選択します。
 +
 image::install/09_create_secured_cluster_resource.png[ACS Operator 9, 800]
 
-.. And then copy & paste the yaml content
+.. そして、yamlの内容をコピー＆ペーストします。
 +
 image::install/10_create_secured_cluster_resource_yaml.png[ACS Operator 10, 800]
 
 +
-Or as in the previous section, with the **+Add → Import YAML** path.
+または、前のセクションと同様に、**+Add → Import YAML**のパスを使用します。
 
-. Monitor the installation using the watch option (or using the web console ``Topology`` view from the ``Developer`` perspective as mentioned before):
+. watch オプションを使用してインストールを監視します (または、前述の ``Developer`` パースペクティブからWebコンソールの ``Topology`` ビューを使用します)。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -246,16 +246,16 @@ Or as in the previous section, with the **+Add → Import YAML** path.
 oc get pods -n stackrox -w
 ----
 
-. At the end of the installation, go to the central console and check the correct attachment of the secured cluster. 
+. インストールが終了したら、central consoleに行き、secured cluster が正しく接続されていることを確認します。
 +
 image::install/11_verify_cluster_list.png[ACS Operator 11, 800]
 
 [#deploy_demo_acs] 
-== Deploying Demo in RHACS - Mandatory
+== RHACS デモの展開 - 必須
 
-IMPORTANT: Independent of which option to install you used, you need to deploy the ACS Demo into your cluster.
+IMPORTANT: 使用したインストール オプションに関係なく、ACS デモをクラスタに展開する必要があります。
 
-. Download the repo with the demo:
+. デモを含むレポをダウンロードします。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -268,9 +268,9 @@ git clone https://github.com/rh-mobb/rhacs-demo
 cd rhacs-demo
 ----
 
-. Apply the ansible demo into the cluster:
+. ansible デモをクラスターに適用します。
 +
-WARNING: you must be logged to the OpenShift cluster before you execute the playbook.
+WARNING: Playbook を実行する前に、OpenShift クラスターにログインする必要があります。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -278,7 +278,7 @@ WARNING: you must be logged to the OpenShift cluster before you execute the play
 ansible-playbook rhacs-demo.yaml -e stackrox_central_admin_password=stackrox
 ----
 
-. After the Playbook execution (and if everything worked properly), the output will be the following:
+. Playbook の実行後 (すべてが正常に機能した場合)、出力は次のようになります。
 +
 [.console-output]
 [source,bash,subs="attributes+,+macros"]	
@@ -294,11 +294,11 @@ localhost                  : ok=35   changed=3    unreachable=0    failed=0    s
 ----
 
 [#deploy_apps] 
-== Deploying Apps - Optional
+== アプリのデプロイ - オプション
 
-If you do not plan to follow the remaining sections (which are based on deploying the demo) and prefer to play and make your own findings, simply follow the steps below:
+残りのセクション (デモの展開に基づく) に従う予定がなく、プレイして独自の発見をしたい場合は、以下の手順に従ってください。
 
-. Start some applications with critical vulnerabilities:
+. 重大な脆弱性があるいくつかのアプリケーションを開始します。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -320,4 +320,4 @@ oc run samba --labels=app=rce \
   --image=vulnerables/cve-2017-7494 -n test
 ----
 
-. Navigate to the RHACS portal to view the violations.
+. RHACS ポータルに移動して、違反を表示します。
