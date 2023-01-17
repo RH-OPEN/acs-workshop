@@ -122,7 +122,7 @@ image::install/04_22_create_central_resource.png[ACS Operator 512, 800]
 
 
 [#install_acs_central_oc_client]
-=== With OC client
+=== OC client(CLI) の利用
 
 . このリポジトリで提供されているテンプレートファイルを使用して、``central`` のカスタムリソースを作成します。
 +
