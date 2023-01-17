@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Setup :: ACS Workshop</title>
+    <title>セットアップ :: ACS Workshop</title>
     <link rel="canonical" href="https://tutsunom.github.io/acs-workshop/acs-workshop/01-setup.html">
     <link rel="prev" href="index.html">
     <link rel="next" href="02-getting_started.html">
@@ -387,22 +387,22 @@
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Setup</h1>
+<h1 class="page">セットアップ</h1>
 <div class="sect1">
-<h2 id="_setup_openshift_cluster"><a class="anchor" href="#_setup_openshift_cluster"></a>Setup OpenShift Cluster</h2>
+<h2 id="_openshift_クラスターのセットアップ"><a class="anchor" href="#_openshift_クラスターのセットアップ"></a>OpenShift クラスターのセットアップ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To run OpenShift4, you need to have one provisioned environment using <a href="https://demo.redhat.com">RHPDS</a>.
-Go to Catalog &#8594; Openshift 4.10 Workshop &#8594; Order.</p>
+<p>OpenShift4 を実行するには、 <a href="https://demo.redhat.com">RHPDS</a> を使用してプロビジョニングされた環境が 1 つ必要です。
+カタログ → Openshift 4.10 ワークショップ → Order を実行します。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_login_openshift_web_console"><a class="anchor" href="#_login_openshift_web_console"></a>Login OpenShift Web console</h2>
+<h2 id="_openshift_web_コンソールのログイン"><a class="anchor" href="#_openshift_web_コンソールのログイン"></a>OpenShift Web コンソールのログイン</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Once you have a workshop environment, you can also access OpenShift web console.<br>
-The web console URL is shown in RHPDS as well as cluster admin username/password.</p>
+<p>ワークショップ環境が整ったら、OpenShift Web コンソールにもアクセスできます。<br>
+Web コンソールの URL は、RHPDS とクラスター管理者のユーザー名/パスワードに表示されます。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -411,8 +411,8 @@ The web console URL is shown in RHPDS as well as cluster admin username/password
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the language setting is NOT set to "English", it might to be good to set it "English" via User Preference menu. <br>
-If you continue this workshop without "English" setting, the pipeline will not display properly in the DevSecOps lab.
+言語設定が「英語」に設定されていない場合は、ユーザー設定メニューで「英語」に設定するとよい場合があります。 <br>
+「英語」に設定せずにこのワークショップを続行すると、DevSecOps ラボでパイプラインが正しく表示されません。
 </td>
 </tr>
 </table>
@@ -420,10 +420,10 @@ If you continue this workshop without "English" setting, the pipeline will not d
 </div>
 </div>
 <div class="sect1">
-<h2 id="_connect_to_your_bastion_server"><a class="anchor" href="#_connect_to_your_bastion_server"></a>Connect to your bastion server</h2>
+<h2 id="_踏み台サーバーに接続する"><a class="anchor" href="#_踏み台サーバーに接続する"></a>踏み台サーバーに接続する</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You also need to access the bastion server in your environment via SSH.</p>
+<p>また、SSH 経由で環境内の踏み台サーバーにアクセスする必要があります。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -431,7 +431,7 @@ If you continue this workshop without "English" setting, the pipeline will not d
 </div>
 </div>
 <div class="paragraph">
-<p>Some CLI tools are already installed on you bastion server. You can check the OpenShift version using:</p>
+<p>一部の CLI ツールは、踏み台サーバーに既にインストールされています。以下を使用して OpenShift のバージョンを確認できます。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -439,7 +439,7 @@ If you continue this workshop without "English" setting, the pipeline will not d
 </div>
 </div>
 <div class="paragraph">
-<p>The output should show oc version &gt;=4.10:</p>
+<p>出力には oc バージョン &gt;=4.10 が表示されます。</p>
 </div>
 <div class="listingblock console-output">
 <div class="content">
@@ -451,14 +451,14 @@ Kubernetes Version: v1.23.5+8471591</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_edit_the_default_project_template"><a class="anchor" href="#_edit_the_default_project_template"></a>Edit the default project template</h2>
+<h2 id="_デフォルトのプロジェクト_テンプレートを編集する"><a class="anchor" href="#_デフォルトのプロジェクト_テンプレートを編集する"></a>デフォルトのプロジェクト テンプレートを編集する</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Then first of all, the default Project Template must be edited.<br>
-In the Openshift 4.10 Workshop environment provided by RHPDS, a Limit Range is automatically set for newly created projects. This can be an obstacle to the smooth running of the Workshop.</p>
+<p>次に、まず、デフォルトのプロジェクト テンプレートを編集する必要があります。
+RHPDS が提供する Openshift 4.10 Workshop 環境では、新しく作成されたプロジェクトに対して制限範囲が自動的に設定されます。これは、ワークショップの円滑な運営を妨げる可能性があります。</p>
 </div>
 <div class="paragraph">
-<p>Use the <code>oc edit</code> command to clear the Limit Range section.</p>
+<p><code>oc edit</code> コマンドを使用して、Limit Range セクションを削除します。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -466,7 +466,7 @@ In the Openshift 4.10 Workshop environment provided by RHPDS, a Limit Range is a
 </div>
 </div>
 <div class="paragraph">
-<p>Delete all of the following part from the <code>project-request</code> manifest and save it.</p>
+<p><code>project-request</code> マニフェストから次の部分をすべて削除して保存します。</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -496,7 +496,7 @@ In the Openshift 4.10 Workshop environment provided by RHPDS, a Limit Range is a
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_tutorial_sources"><a class="anchor" href="#_get_tutorial_sources"></a>Get tutorial sources</h2>
+<h2 id="_チュートリアルのソースを入手する"><a class="anchor" href="#_チュートリアルのソースを入手する"></a>チュートリアルのソースを入手する</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before we start setting up the environment, let’s clone the tutorial sources and set the <code>TUTORIAL_HOME</code> environment variable to point to the root directory of the tutorial:</p>
@@ -517,7 +517,7 @@ In the Openshift 4.10 Workshop environment provided by RHPDS, a Limit Range is a
 </div>
 </div>
 <div class="paragraph">
-<p>And then you are ready for installing RHACS on Openshift.</p>
+<p>これで、Openshift に RHACS をインストールする準備が整いました。</p>
 </div>
 </div>
 </div>
