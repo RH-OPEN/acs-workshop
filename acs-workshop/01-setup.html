@@ -73,31 +73,35 @@
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="01-setup.html">Setup</a>
+    <a class="nav-link" href="01-setup.html">セットアップ</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="#prerequisite">Prerequisites</a>
+    <a class="nav-link" href="#prerequisite">前提条件</a>
   </li>
 </ul>
   </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="02-getting_started.html">Getting Started</a>
+    <a class="nav-link" href="02-getting_started.html">作業の開始</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-getting_started.html#install_acs_operator">Install RHACS Operator</a>
+    <a class="nav-link" href="02-getting_started.html#install_acs_operator">RHACS Operatorのインストール</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-getting_started.html#install_acs_central">Install RHACS Central Cluster</a>
+    <a class="nav-link" href="02-getting_started.html#install_acs_central">RHACS Central Clusterのインストール</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-getting_started.html#config_acs_securedcluster">Configuration of the RHACS Secured Cluster </a>
+    <a class="nav-link" href="02-getting_started.html#config_acs_securedcluster">RHACS Secured Cluster の構成</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-getting_started.html#deploy_demo_acs">Deploying Demo in RHACS</a>
+    <a class="nav-link" href="02-getting_started.html#deploy_demo_acs">RHACS デモの展開</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="02-getting_started.html#deploy_apps">Deploying Apps</a>
+    <a class="nav-link" href="02-getting_started.html#deploy_apps">アプリのデプロイ - オプション</a>
   </li>
 </ul>
   </li>
@@ -376,29 +380,29 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">ACS Workshop</a></li>
-    <li><a href="01-setup.html">Setup</a></li>
+    <li><a href="01-setup.html">セットアップ</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/tutsunom/acs-workshop/edit/master/documentation/modules/ROOT/pages/01-setup.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/orangestars1/acs-workshop/edit/master/documentation/modules/ROOT/pages/01-setup.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
 <h1 class="page">Setup</h1>
 <div class="sect1">
-<h2 id="_setup_openshift_cluster"><a class="anchor" href="#_setup_openshift_cluster"></a>OpenShift クラスターのセットアップ</h2>
+<h2 id="_setup_openshift_cluster"><a class="anchor" href="#_setup_openshift_cluster"></a>Setup OpenShift Cluster</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>OpenShift4 を実行するには、 <a href="https://demo.redhat.com">RHPDS</a> を使用してプロビジョニングされた環境が 1 つ必要です。
-カタログ &#8594; Openshift 4.10 Workshop &#8594; Order に移動します。</p>
+<p>To run OpenShift4, you need to have one provisioned environment using <a href="https://demo.redhat.com">RHPDS</a>.
+Go to Catalog &#8594; Openshift 4.10 Workshop &#8594; Order.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_login_openshift_web_console"><a class="anchor" href="#_login_openshift_web_console"></a>OpenShift Web コンソールログイン</h2>
+<h2 id="_login_openshift_web_console"><a class="anchor" href="#_login_openshift_web_console"></a>Login OpenShift Web console</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ワークショップ環境が整ったら、OpenShift Web コンソールにもアクセスできます。<br>
-Web コンソールの URL は、RHPDS とクラスター管理者のユーザー名/パスワードに表示されます。</p>
+<p>Once you have a workshop environment, you can also access OpenShift web console.<br>
+The web console URL is shown in RHPDS as well as cluster admin username/password.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -407,8 +411,8 @@ Web コンソールの URL は、RHPDS とクラスター管理者のユーザ�
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-言語設定が「英語」に設定されていない場合は、ユーザー設定メニューで「英語」に設定するとよい場合があります。 <br>
-「英語」に設定せずにこのワークショップを続行すると、DevSecOps ラボでパイプラインが正しく表示されません。
+If the language setting is NOT set to "English", it might to be good to set it "English" via User Preference menu. <br>
+If you continue this workshop without "English" setting, the pipeline will not display properly in the DevSecOps lab.
 </td>
 </tr>
 </table>
@@ -416,10 +420,10 @@ Web コンソールの URL は、RHPDS とクラスター管理者のユーザ�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_connect_to_your_bastion_server"><a class="anchor" href="#_connect_to_your_bastion_server"></a>踏み台サーバーに接続する</h2>
+<h2 id="_connect_to_your_bastion_server"><a class="anchor" href="#_connect_to_your_bastion_server"></a>Connect to your bastion server</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>また、SSH 経由で環境内の踏み台サーバーにアクセスする必要があります。</p>
+<p>You also need to access the bastion server in your environment via SSH.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -427,7 +431,7 @@ Web コンソールの URL は、RHPDS とクラスター管理者のユーザ�
 </div>
 </div>
 <div class="paragraph">
-<p>一部の CLI ツールは、踏み台サーバーに既にインストールされています。OpenShift のバージョンは、次を使用して確認できます。</p>
+<p>Some CLI tools are already installed on you bastion server. You can check the OpenShift version using:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -435,7 +439,7 @@ Web コンソールの URL は、RHPDS とクラスター管理者のユーザ�
 </div>
 </div>
 <div class="paragraph">
-<p>出力には oc バージョン &gt;=4.10 が表示されます。</p>
+<p>The output should show oc version &gt;=4.10:</p>
 </div>
 <div class="listingblock console-output">
 <div class="content">
@@ -447,14 +451,14 @@ Kubernetes Version: v1.23.5+8471591</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_edit_the_default_project_template"><a class="anchor" href="#_edit_the_default_project_template"></a>デフォルトのプロジェクト テンプレートを編集する</h2>
+<h2 id="_edit_the_default_project_template"><a class="anchor" href="#_edit_the_default_project_template"></a>Edit the default project template</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>次に、まず、デフォルトのプロジェクト テンプレートを編集する必要があります。<br>
-RHPDS が提供する Openshift 4.10 Workshop 環境では、新しく作成されたプロジェクトに対して制限範囲が自動的に設定されます。これは、ワークショップの円滑な運営を妨げる可能性があります。</p>
+<p>Then first of all, the default Project Template must be edited.<br>
+In the Openshift 4.10 Workshop environment provided by RHPDS, a Limit Range is automatically set for newly created projects. This can be an obstacle to the smooth running of the Workshop.</p>
 </div>
 <div class="paragraph">
-<p><code>oc edit</code> コマンドを使用して、制限範囲セクションをクリアします。</p>
+<p>Use the <code>oc edit</code> command to clear the Limit Range section.</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -462,7 +466,7 @@ RHPDS が提供する Openshift 4.10 Workshop 環境では、新しく作成さ�
 </div>
 </div>
 <div class="paragraph">
-<p> <code>project-request</code> マニフェストから次の部分をすべて削除して保存します。</p>
+<p>Delete all of the following part from the <code>project-request</code> manifest and save it.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -492,10 +496,10 @@ RHPDS が提供する Openshift 4.10 Workshop 環境では、新しく作成さ�
 </div>
 </div>
 <div class="sect1">
-<h2 id="_get_tutorial_sources"><a class="anchor" href="#_get_tutorial_sources"></a>チュートリアルのソースを入手する</h2>
+<h2 id="_get_tutorial_sources"><a class="anchor" href="#_get_tutorial_sources"></a>Get tutorial sources</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p> <code>TUTORIAL_HOME</code> 環境のセットアップを開始する前に、チュートリアルのソースを複製し、チュートリアルのルート ディレクトリを指すように環境変数を設定しましょう。</p>
+<p>Before we start setting up the environment, let’s clone the tutorial sources and set the <code>TUTORIAL_HOME</code> environment variable to point to the root directory of the tutorial:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -513,13 +517,13 @@ RHPDS が提供する Openshift 4.10 Workshop 環境では、新しく作成さ�
 </div>
 </div>
 <div class="paragraph">
-<p>これで、Openshift に RHACS をインストールする準備が整いました。</p>
+<p>And then you are ready for installing RHACS on Openshift.</p>
 </div>
 </div>
 </div>
 <nav class="pagination">
   <span class="prev"><a href="index.html">ACS Workshop</a></span>
-  <span class="next"><a href="02-getting_started.html">Getting Started</a></span>
+  <span class="next"><a href="02-getting_started.html">作業の開始</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
