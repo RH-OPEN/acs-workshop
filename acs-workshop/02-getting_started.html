@@ -383,7 +383,7 @@
     <li><a href="02-getting_started.html">作業の開始</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/orangestars1/acs-workshop/edit/master/documentation/modules/ROOT/pages/02-getting_started.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/RH-OPEN/acs-workshop/edit/master/documentation/modules/ROOT/pages/02-getting_started.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -652,7 +652,7 @@ spec:
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Platform Configuration<code> セクションの </code>Integration`` サブセクションにアクセスして、cluster init bundle を生成します。</p>
+<p><code>Platform Configuration</code> セクションの <code>Integration</code> サブセクションにアクセスして、cluster init bundle を生成します。</p>
 <div class="imageblock">
 <div class="content">
 <img src="_images/install/06_acs_integrations.png" alt="ACS Operator 7" width="800">
@@ -715,7 +715,7 @@ spec:
 </table>
 </div>
 <div class="paragraph">
-<p><code>SecuredCluster</code> のカスタムリソースは非常にシンプルです。以下の例では、 <code>demo-cluster</code> をターゲットとした設定を示しています。<code>collector</code> の設定に注目してください。コレクションメソッドは <code>EBPF</code> に設定されています。別の収集方法としては、 <code>KernelModule</code> があります。TolerateTaints`` により、Collector デーモンセットを ODF ノードのような特別なテイントを持つノードにもデプロイすることができます。</p>
+<p><code>SecuredCluster</code> のカスタムリソースは非常にシンプルです。以下の例では、 <code>demo-cluster</code> をターゲットとした設定を示しています。<code>collector</code> の設定に注目してください。コレクションメソッドは <code>EBPF</code> に設定されています。別の収集方法としては、 <code>KernelModule</code> があります。 <code>TolerateTaints</code> により、Collector デーモンセットを ODF ノードのような特別なテイントを持つノードにもデプロイすることができます。</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
@@ -744,7 +744,7 @@ spec:
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-詳しくは、https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator[SecuredCluster operator documentation]の設定を確認してください。
+詳しくは、 <a href="https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator">SecuredCluster operator documentation</a>の設定を確認してください。
 </td>
 </tr>
 </table>
@@ -752,7 +752,7 @@ spec:
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>リポジトリで提供されているサンプルを使用(オプションでカストマイズも可能)して、Secured Clusterカスタムリソースを作成します。</p>
+<p>リポジトリで提供されているサンプルを使用して、Secured Clusterカスタムリソースを作成します(オプションでカスタマイズも可能)。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc apply -f stackrox-secured-cluster-services.yaml -n stackrox</code></pre>
@@ -824,7 +824,7 @@ spec:
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>デモを含むレポをダウンロードします。</p>
+<p>デモを含むレポジトリをダウンロードします。</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo dnf install -y ansible
@@ -857,7 +857,7 @@ Playbook を実行する前に、OpenShift クラスターにログインする�
 </div>
 </li>
 <li>
-<p>Playbook の実行後 (すべてが正常に機能した場合)、出力は次のようになります。</p>
+<p>Playbook の実行後。すべてが正常に機能した場合出力は次のようになります。</p>
 <div class="listingblock console-output">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">TASK [ocp4_deploy_acs_demo_apps : Lock baselines] ****************************************************************************************
@@ -878,7 +878,7 @@ localhost                  : ok=35   changed=3    unreachable=0    failed=0    s
 <h2 id="deploy_apps"><a class="anchor" href="#deploy_apps"></a>アプリのデプロイ - オプション</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>残りのセクション (デモの展開に基づく) に従う予定がなく、プレイして独自の発見をしたい場合は、以下の手順に従ってください。</p>
+<p>もし本ラボの残りのセクションに従う予定がなく、独自の発見をしたい場合は以下の手順を実施してみてください。</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

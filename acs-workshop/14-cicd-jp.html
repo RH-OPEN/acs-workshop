@@ -383,7 +383,7 @@
     <li><a href="14-cicd-jp.html">RHACSを使用したアプリケーションへの自動化セキュリティの実装とDevSecOpsの構築</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/orangestars1/acs-workshop/edit/master/documentation/modules/ROOT/pages/14-cicd-jp.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/RH-OPEN/acs-workshop/edit/master/documentation/modules/ROOT/pages/14-cicd-jp.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -468,7 +468,7 @@ OpenShift Pipelines と OpenShift GitOps はそれぞれ Operator が用意さ�
 </div>
 <div class="paragraph">
 <p>Web コンソールに cluster-admin でログインしたら、左のメニューから "Operators" &gt; "OperatorHub" を選択し、OperatorHub の画面に移ります。<br>
-OperatorHub の画面で、Red Hat OpenShift Pipelines の Operator を検索し、これをクリックします。</p>
+OperatorHub の画面で、 <code>Red Hat OpenShift Pipelines</code> の Operator を検索し、これをクリックします。</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-pipelines-install-01.PNG" alt="600" width="800"></span></p>
@@ -566,7 +566,7 @@ cd Devsecops-CI-CDPipeLineDemo
 <p>提供されたadminユーザの認証情報を使用してコンソールにログインします。</p>
 </li>
 <li>
-<p>まだ開発者パースペクティブにいない場合は、左上の開発者コンソールに切り替えるためにDeveloperを選択します。</p>
+<p>まだDeveloperパースペクティブにいない場合は、左上の開発者コンソールに切り替えるためにDeveloperを選択します。</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-devsecops04.png" alt="200" width="200"></span></p>
 </div>
@@ -584,7 +584,7 @@ cd Devsecops-CI-CDPipeLineDemo
 </div>
 </li>
 <li>
-<p>" petclinic-build-dev "パイプラインをクリックします。</p>
+<p>"petclinic-build-dev" パイプラインをクリックします。</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-devsecops07.png" alt="600" width="800"></span></p>
 </div>
@@ -593,7 +593,7 @@ cd Devsecops-CI-CDPipeLineDemo
 <p>右上の “Actions” をクリック → “start” を選択します。</p>
 </li>
 <li>
-<p>"Workspaces"でPVCを選択し、パイプラインが実行時に使用する共有ストレージのパスとしてPVC petclinic-build-workspaceを選択します。</p>
+<p>"Workspaces"でPVCを選択し、パイプラインが実行時に使用する共有ストレージのパスとしてPVC <code>petclinic-build-workspace</code> を選択します。</p>
 </li>
 <li>
 <p>"maven-settings" で「Config Map」を選択し、"maven-settings" をConfig Mapとして選択します。</p>
@@ -602,7 +602,7 @@ cd Devsecops-CI-CDPipeLineDemo
 </div>
 </li>
 <li>
-<p>start をクリックします。</p>
+<p>"start" をクリックします。</p>
 </li>
 </ol>
 </div>
@@ -616,7 +616,7 @@ cd Devsecops-CI-CDPipeLineDemo
 <p>開発コンソールから、左のナビメニューにある <code>Search</code> をクリックします。</p>
 </li>
 <li>
-<p>'route'(日本語ブラウザの場合は&#8217;ルート')と入力し、リストの中から<code>Route</code>をクリックします。</p>
+<p>'route' (日本語ブラウザの場合は&#8217;ルート')と入力し、リストの中から<code>Route</code>をクリックします。</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-devsecops09.png" alt="400" width="400"></span></p>
 </div>
@@ -628,7 +628,7 @@ cd Devsecops-CI-CDPipeLineDemo
 </div>
 </li>
 <li>
-<p><code>サインイン</code>をクリックし、<em>gogs</em>の認証情報でログインします。</p>
+<p><code>Sigh In</code>をクリックし、<em>gogs</em>の認証情報でログインします。</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-devsecops11.png" alt="500" width="400"></span></p>
 </div>
@@ -1212,13 +1212,13 @@ GitOps のワークフローは、アプリケーションを開発、テスト�
 </div>
 </li>
 <li>
-<p><code>stage-spring-petclinic</code> をクリックします。</p>
+<p><code>stage-spring-petclinic</code> をクリック</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-devsecops63.png" alt="300" width="700"></span></p>
 </div>
 </li>
 <li>
-<p>上の画像のように、ステータスがOutOfSyncの場合は、トップメニューの <span class="image"><img src="_images/cicd/lab4-devsecops64.png" alt="40" width="50"></span> をクリックして、アプリケーションを devsecops-qa にデプロイし、以下のように “Synced” されるまで待ちます。("Synced"の場合は、この手順はスキップしてください)</p>
+<p>トップメニューの <span class="image"><img src="_images/cicd/lab4-devsecops64.png" alt="40" width="50"></span> をクリックして、アプリケーションを devsecops-qa にデプロイし、以下のように “Synced” されるまで待ちます。</p>
 <div class="paragraph">
 <p><span class="image"><img src="_images/cicd/lab4-devsecops65.png" alt="300" width="700"></span></p>
 </div>
