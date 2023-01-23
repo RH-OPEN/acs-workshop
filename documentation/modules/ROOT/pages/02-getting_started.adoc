@@ -162,7 +162,7 @@ ACSにクラスタをインポートするには、Sensor、Collectors、Admissi
 [#config_acs_securedcluster_init_bundle]
 === RHACSポータルを利用した init bundle の生成
 
-. Platform Configuration`` セクションの ``Integration`` サブセクションにアクセスして、cluster init bundle を生成します。
+. ``Platform Configuration`` セクションの ``Integration`` サブセクションにアクセスして、cluster init bundle を生成します。
 +
 image::install/06_acs_integrations.png[ACS Operator 7, 800]
 
@@ -192,7 +192,7 @@ yaml ファイルを開いて内容をコピーし、**+Add → Import YAML** �
 
 NOTE: このワークショップでは、Central clusterとsecured clusterとして同じクラスタを使用します。実際のシナリオでは、多くの異なるsecured clusterが存在することになります。SecuredCluster CRを管理するために、すべてのsecured cluster にACS Operatorをインストールしてください。
 
-``SecuredCluster`` のカスタムリソースは非常にシンプルです。以下の例では、 ``demo-cluster`` をターゲットとした設定を示しています。``collector`` の設定に注目してください。コレクションメソッドは ``EBPF`` に設定されています。別の収集方法としては、 ``KernelModule`` があります。TolerateTaints`` により、Collector デーモンセットを ODF ノードのような特別なテイントを持つノードにもデプロイすることができます。
+``SecuredCluster`` のカスタムリソースは非常にシンプルです。以下の例では、 ``demo-cluster`` をターゲットとした設定を示しています。``collector`` の設定に注目してください。コレクションメソッドは ``EBPF`` に設定されています。別の収集方法としては、 ``KernelModule`` があります。 ``TolerateTaints`` により、Collector デーモンセットを ODF ノードのような特別なテイントを持つノードにもデプロイすることができます。
 
 [.console-input]
 [source,yaml,subs="attributes+,+macros"]	
@@ -215,9 +215,9 @@ spec:
     taintToleration: TolerateTaints
 ----
 
-NOTE: 詳しくは、https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator[SecuredCluster operator documentation]の設定を確認してください。
+NOTE: 詳しくは、 https://docs.openshift.com/acs/installing/install-ocp-operator.html#addmission-controller-settings_install-ocp-operator[SecuredCluster operator documentation]の設定を確認してください。
 
-. リポジトリで提供されているサンプルを使用(オプションでカストマイズも可能)して、Secured Clusterカスタムリソースを作成します。
+. リポジトリで提供されているサンプルを使用して、Secured Clusterカスタムリソースを作成します(オプションでカスタマイズも可能)。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -255,7 +255,7 @@ image::install/11_verify_cluster_list.png[ACS Operator 11, 800]
 
 IMPORTANT: 使用したインストール オプションに関係なく、ACS デモをクラスタに展開する必要があります。
 
-. デモを含むレポをダウンロードします。
+. デモを含むレポジトリをダウンロードします。
 +
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
@@ -278,7 +278,7 @@ WARNING: Playbook を実行する前に、OpenShift クラスターにログイ�
 ansible-playbook rhacs-demo.yaml -e stackrox_central_admin_password=stackrox
 ----
 
-. Playbook の実行後 (すべてが正常に機能した場合)、出力は次のようになります。
+. Playbook の実行後。すべてが正常に機能した場合出力は次のようになります。
 +
 [.console-output]
 [source,bash,subs="attributes+,+macros"]	
@@ -296,7 +296,7 @@ localhost                  : ok=35   changed=3    unreachable=0    failed=0    s
 [#deploy_apps] 
 == アプリのデプロイ - オプション
 
-残りのセクション (デモの展開に基づく) に従う予定がなく、プレイして独自の発見をしたい場合は、以下の手順に従ってください。
+もし本ラボの残りのセクションに従う予定がなく、独自の発見をしたい場合は以下の手順を実施してみてください。
 
 . 重大な脆弱性があるいくつかのアプリケーションを開始します。
 +

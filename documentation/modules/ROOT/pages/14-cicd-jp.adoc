@@ -41,7 +41,7 @@ DevSecOpsのCI/CDパイプラインでは、次のような技術を使用しま
 OpenShift Pipelines と OpenShift GitOps はそれぞれ Operator が用意されており、OpenShift Web コンソールの OperatorHub から簡単にインストールすることができます。
 
 Web コンソールに cluster-admin でログインしたら、左のメニューから "Operators" > "OperatorHub" を選択し、OperatorHub の画面に移ります。 +
-OperatorHub の画面で、Red Hat OpenShift Pipelines の Operator を検索し、これをクリックします。
+OperatorHub の画面で、 ``Red Hat OpenShift Pipelines`` の Operator を検索し、これをクリックします。
 
 image:cicd/lab4-pipelines-install-01.PNG[600,800]
 
@@ -97,7 +97,7 @@ NOTE: 前段の System Policies の演習の最後に、**"Fixable Severity at l
 ** Option 1: Developer UIを使用して開始する場合
 .. ブラウザで OpenShift Console の URL を参照します。
 .. 提供されたadminユーザの認証情報を使用してコンソールにログインします。
-.. まだ開発者パースペクティブにいない場合は、左上の開発者コンソールに切り替えるためにDeveloperを選択します。
+.. まだDeveloperパースペクティブにいない場合は、左上の開発者コンソールに切り替えるためにDeveloperを選択します。
 +
 image:cicd/lab4-devsecops04.png[200,200]
 +
@@ -109,23 +109,23 @@ image:cicd/lab4-devsecops05.png[200,200]
 +
 image:cicd/lab4-devsecops06.png[400,700]
 +
-.. " petclinic-build-dev "パイプラインをクリックします。
+.. "petclinic-build-dev" パイプラインをクリックします。
 +
 image:cicd/lab4-devsecops07.png[600,800]
 +
 .. 右上の “Actions” をクリック → “start” を選択します。
-.. "Workspaces"でPVCを選択し、パイプラインが実行時に使用する共有ストレージのパスとしてPVC petclinic-build-workspaceを選択します。
+.. "Workspaces"でPVCを選択し、パイプラインが実行時に使用する共有ストレージのパスとしてPVC ``petclinic-build-workspace`` を選択します。
 .. "maven-settings" で「Config Map」を選択し、"maven-settings" をConfig Mapとして選択します。
 +
 image:cicd/lab4-devsecops08.png[200,700]
 +
-.. start をクリックします。
+.. "start" をクリックします。
 +
 ** Option 2: 新しいコードがgit repoにpushされると、パイプラインを開始するトリガーにもなります。このラボでは、git repo は Gogs です。以下の手順は、「Gogs」git repo経由でコードをプッシュするためのものです。
 このオプションは、開発者の観点からすると最もポピュラーなものかもしれません。PR や git リポジトリへのプッシュからパイプラインが始まり、webhook が自動的にパイプラインを開始します。
 +
 .. 開発コンソールから、左のナビメニューにある `Search` をクリックします。
-.. 'route'(日本語ブラウザの場合は'ルート')と入力し、リストの中から``Route``をクリックします。
+.. 'route' (日本語ブラウザの場合は'ルート')と入力し、リストの中から``Route``をクリックします。
 +
 image:cicd/lab4-devsecops09.png[400,400]
 +
@@ -133,7 +133,7 @@ image:cicd/lab4-devsecops09.png[400,400]
 +
 image:cicd/lab4-devsecops10.png[400,600]
 +
-.. ``サインイン``をクリックし、__gogs__の認証情報でログインします。
+.. ``Sigh In``をクリックし、__gogs__の認証情報でログインします。
 +
 image:cicd/lab4-devsecops11.png[500,400]
 +
