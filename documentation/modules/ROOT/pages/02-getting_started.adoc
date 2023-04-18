@@ -166,7 +166,7 @@ ACSにクラスタをインポートするには、Sensor、Collectors、Admissi
 +
 image::install/06_acs_integrations.png[ACS Operator 7, 800]
 
-. クラスタ名を指定して bundle を生成します (ここでは ``demo-cluster`` )。
+. クラスタ名を指定して bundle を生成します (ここでは ``demo-cluster``と指定 )。
 +
 image::install/07_generate_cluster_init_bundle.png[ACS Operator 8, 800]
 
