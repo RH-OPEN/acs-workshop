@@ -84,7 +84,7 @@ oc edit template project-request -n openshift-config
 
 == チュートリアルのソースを入手する
 
-:tutorial-url: https://github.com/tutsunom/acs-workshop.git
+:tutorial-url: https://github.com/RH-OPEN/acs-workshop.git
 :folder: acs-workshop
 include::https://raw.githubusercontent.com/redhat-developer-demos/rhd-tutorial-common/master/download-sources.adoc[]
 
