@@ -264,7 +264,7 @@ sudo dnf install -y ansible
 ansible-galaxy collection install kubernetes.core
 sudo pip3 install kubernetes openshift jmespath
 cd
-git clone https://github.com/rh-mobb/rhacs-demo
+git clone https://github.com/RH-OPEN/rhacs-demo
 cd rhacs-demo
 ----
 
