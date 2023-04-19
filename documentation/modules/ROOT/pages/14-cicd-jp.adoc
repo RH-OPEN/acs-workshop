@@ -79,7 +79,7 @@ OpenShift Pipelines と OpenShift GitOps を使ってパイプラインを手で
 [source,bash,subs="attributes+,+macros"]	
 ----
 cd
-git clone https://github.com/tutsunom/Devsecops-CI-CDPipeLineDemo.git
+git clone https://github.com/RH-OPEN/Devsecops-CI-CDPipeLineDemo.git
 cd Devsecops-CI-CDPipeLineDemo
 ./install.sh
 ----
