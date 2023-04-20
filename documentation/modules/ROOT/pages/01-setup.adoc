@@ -48,7 +48,7 @@ Kubernetes Version: {kubernetes-version}
 次に、まず、デフォルトのプロジェクト テンプレートを編集する必要があります。
 RHPDS が提供する Openshift 4.10 Workshop 環境では、新しく作成されたプロジェクトに対して制限範囲(Limit Ranges)が自動的に設定されます。これは、ワークショップの円滑な運営を妨げる可能性があります。
 
-`oc edit` コマンドを使用して、Limit Range セクションを<ins>**削除**<ins>します。
+`oc edit` コマンドを使用して、Limit Range セクションを<ins>**削除**</ins>します。
 
 [.console-input]
 [source,bash,subs="attributes+,+macros"]	
