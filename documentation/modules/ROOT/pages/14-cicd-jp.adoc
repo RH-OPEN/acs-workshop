@@ -425,8 +425,9 @@ image:cicd/lab4-devsecops43.png[300,300]
 .. リンクは Argo CD のログインにリダイレクトされます。初めてArgo CDにログインする場合は、``Advanced`` → ``Proceed to openshift-gitops-server-openshift-gitops.apps...`` のリンクをクリックしてください。
 .. "admin" ユーザーとしてログインするためには、まず、以下のコマンドを実行して、そのパスワードを取得してください。
 +
-[source]
-----
+[.console-input]
+[source,bash,subs="attributes+,+macros"]	
+----	
 oc get secret/openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d ; echo
 ----
 +
